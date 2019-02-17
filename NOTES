@@ -5,11 +5,14 @@
 
     A Genre can have multiple artists and multiple songs
       Song >- Genre -< Artist
-      SongGenre -< Artist
 
     A Song can belong to ONE Artist and multiple genres
-      Artist - SongGenre
-      
+      Artist - Song -< genre
+
     How would we implement the relationship of a song having many genres and genre having many songs? In order to establish a "many-to-many" relationship, we'll need a join table. You will need a SongGenre class to go along with this table in the database
       Song >-< Genre
       SongGenre
+
+ artist has genres through songs
+ a genre has songs and artists through song_genre
+ a song has many genres throgh song_genres
