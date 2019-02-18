@@ -1,2 +1,4 @@
-<h1>artist index.erb</h1>
-<ul><%= @artists.name %></ul>
+<ul><% @artists.each do |artist| %>
+  <li><a href="/songs/<%= artist.id %>"><%= artist.name %></a></li>
+<% end %>
+</ul>

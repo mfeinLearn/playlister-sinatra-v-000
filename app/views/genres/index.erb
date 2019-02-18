@@ -1,1 +1,4 @@
-genre index.erb
+<ul><% @genres.each do |genre| %>
+  <li><%= genre.name %></li>
+<% end %>
+</ul>
