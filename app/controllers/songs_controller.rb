@@ -6,11 +6,10 @@ class SongsController < ApplicationController
     erb :'songs/index'
   end
 
-  post '/songs/Song.new(slug)' do
-    #@song = Song.find(params[:slug])
-
-    binding.pry
-    erb :'songs/show'
+  get '/songs/:slug' do
+    @song = Song.find_by_slug(params[:slug])
+    #binding.pry
+    erb :'/songs/show'
   end
 
   get '/songs/new' do
