@@ -13,8 +13,12 @@ class SongsController < ApplicationController
   end
 
   get '/songs/new' do
-
-    erb :'songs/new'
+  #  @song = Song.create(params[:song][:name], params[:artist_id])
+    erb :"songs/new"
   end
+
+  # post '/song' do
+  #   @artist = Artist.create(params["name"])
+  # end
 
 end

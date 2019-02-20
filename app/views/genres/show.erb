@@ -1,1 +1,11 @@
 genre index.erb
+
+<ul><% @genre.artists.each do |artist| %>
+  <li><%= artist.name %></li>
+  <li><a href="/artists/<%= artist.slug %>"><%= artist.name %></a></li>
+</ul><% end %>
+
+<ul><% @genre.songs.each do |song| %>
+  <li><%= song.name %></li>
+  <li><a href="/songs/<%= song.slug %>"><%= song.name %></a></li>
+</ul><% end %>
