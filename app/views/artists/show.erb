@@ -1,1 +1,7 @@
-artists show.erb
+<% @artist.songs.each do |song| %>
+  <%= song.name %>
+<% end %>
+
+<% @artist.genres.each do |genre| %>
+  <%= genre.name %>
+<% end %>
