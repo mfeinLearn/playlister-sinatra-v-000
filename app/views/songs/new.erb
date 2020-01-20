@@ -1,13 +1,22 @@
-<form action="/songs" method="post">
-  <div>
-    <label for="name">Name Song: </label>
-    <input type="text" name="Name" id="song-name">
-  </div>
-  <div>
-    <label for="name">Name Artist: </label>
-    <input type="text" name="artist[name]" id="artist-name">
-  </div>
-  <div>
-    <input type="submit" value="submit">
-  </div>
+<h3>create a new song</h3>
+<form method="post" action="/songs/:slug">
+  <input type="text" value="name" name="name" id="Name">
+  <h6>select a genre</h6>
+
+  <% Genre.all.each do |instance| %>
+  <label><%= instance.name %></label>
+    <input type="checkbox" value="<%= instance.name %>" name="genres" id="<%= instance.name %>">
+  <% end %>
+
+  <h6>add a new artist</h6>
+  <input type="text" name="artist" id="Artist Name">
+  <br></br>
+  <h6>or choose an existing artist</h6>
+  <% Artist.all.each do |instance| %>
+  <label><%= instance.name %></label>
+    <input type="checkbox" value="<%= instance.name %>" name="artist" id="<%= instance.name %>">
+  <% end %>
+
+  <br></br>
+  <input type="submit" id="Create">
 </form>
