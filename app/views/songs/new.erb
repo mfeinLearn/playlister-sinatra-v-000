@@ -3,18 +3,18 @@
   <input type="text" value="name" name="name" id="Name">
   <h6>select a genre</h6>
 
-  <% Genre.all.each do |instance| %>
-  <label><%= instance.name %></label>
-    <input type="checkbox" value="<%= instance.name %>" name="genres" id="<%= instance.name %>">
+  <% Genre.all.each do |genre| %>
+  <label><%= genre.name %></label>
+    <input type="checkbox" value="<%= genre.name %>" name="genres" id="<%= genre.name %>">
   <% end %>
 
   <h6>add a new artist</h6>
   <input type="text" name="artist" id="Artist Name">
   <br></br>
   <h6>or choose an existing artist</h6>
-  <% Artist.all.each do |instance| %>
-  <label><%= instance.name %></label>
-    <input type="checkbox" value="<%= instance.name %>" name="artist" id="<%= instance.name %>">
+  <% Artist.all.each do |artist| %>
+  <label><%= artist.name %></label>
+    <input type="checkbox" value="<%= artist.name %>" name="artist" id="<%= artist.name %>">
   <% end %>
 
   <br></br>
